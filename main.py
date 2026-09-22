@@ -14,11 +14,10 @@ def handle_order(e):
         "Americano": 35
     }.get(coffee_type, 0) * int(quantity)
     sku_number = f"{coffee_type[:3].upper()}-{random.randint(100000, 999999)}"
-    temperature = document.getElementById("coffeeTemp").value
 
     display(f"Name: {name}", target="summaryName", append=False)
     display(f"Email: {email}", target="summaryEmail", append=False)
-    display(f"Coffee Ordered: {temperature} {coffee_type}", target="summaryCoffeeType", append=False)
+    display(f"Coffee Ordered:{coffee_type}", target="summaryCoffeeType", append=False)
     display(f"Quantity: {quantity}", target="summaryQuantity", append=False)
     display(
         f"Total Price: ${calculate_price(coffee_type, quantity)}",
